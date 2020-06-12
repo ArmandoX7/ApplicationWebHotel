@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HotelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Alquiler">
+    <Key>
+      <PropertyRef Name="idAlquiler" />
+    </Key>
+    <Property Name="idAlquiler" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="alqHabitacion" Type="int" Nullable="false" />
+    <Property Name="alqCliente" Type="int" Nullable="false" />
+    <Property Name="alqFechaIngreso" Type="date" Nullable="false" />
+    <Property Name="alqFechaSalida" Type="date" Nullable="false" />
+    <Property Name="alqObservacion" Type="nvarchar(max)" />
+    <Property Name="alqEstado" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="alqCostoTotal" Type="int" Nullable="false" />
+    <Property Name="alqUsuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="idCliente" />
+    </Key>
+    <Property Name="idCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cliPersona" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contactenos">
+    <Key>
+      <PropertyRef Name="idContactenos" />
+    </Key>
+    <Property Name="idContactenos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="conNombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="conCorreo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="conComentario" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="idEmpleado" />
+    </Key>
+    <Property Name="idEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="empPersona" Type="int" Nullable="false" />
+    <Property Name="empCargo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Habitaciones">
+    <Key>
+      <PropertyRef Name="idHabitacion" />
+    </Key>
+    <Property Name="idHabitacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="habNumero" Type="int" Nullable="false" />
+    <Property Name="habPiso" Type="int" Nullable="false" />
+    <Property Name="habDescripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="habEstado" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="habTipoHabitacion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Personas">
+    <Key>
+      <PropertyRef Name="idPersona" />
+    </Key>
+    <Property Name="idPersona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="perIdentificacion" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="perNombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="perCorreo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoHabitaciones">
+    <Key>
+      <PropertyRef Name="idTipoHabitacion" />
+    </Key>
+    <Property Name="idTipoHabitacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipNombre" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="tipCosto" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuEmpleado" Type="int" Nullable="false" />
+    <Property Name="usuLogin" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="usuPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Alquiler_Clientes">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+    <End Role="Alquiler" Type="Self.Alquiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="Alquiler">
+        <PropertyRef Name="alqCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Alquiler_Habitaciones">
+    <End Role="Habitaciones" Type="Self.Habitaciones" Multiplicity="1" />
+    <End Role="Alquiler" Type="Self.Alquiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Habitaciones">
+        <PropertyRef Name="idHabitacion" />
+      </Principal>
+      <Dependent Role="Alquiler">
+        <PropertyRef Name="alqHabitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Alquiler_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Alquiler" Type="Self.Alquiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Alquiler">
+        <PropertyRef Name="alqUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clientes_Personas">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="1" />
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="idPersona" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="cliPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_Personas">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="1" />
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="idPersona" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="empPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Habitaciones_TipoHabitaciones">
+    <End Role="TipoHabitaciones" Type="Self.TipoHabitaciones" Multiplicity="1" />
+    <End Role="Habitaciones" Type="Self.Habitaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoHabitaciones">
+        <PropertyRef Name="idTipoHabitacion" />
+      </Principal>
+      <Dependent Role="Habitaciones">
+        <PropertyRef Name="habTipoHabitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Empleados">
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleados">
+        <PropertyRef Name="idEmpleado" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="usuEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HotelModelStoreContainer">
+    <EntitySet Name="Alquiler" EntityType="Self.Alquiler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contactenos" EntityType="Self.Contactenos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Habitaciones" EntityType="Self.Habitaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personas" EntityType="Self.Personas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoHabitaciones" EntityType="Self.TipoHabitaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Alquiler_Clientes" Association="Self.FK_Alquiler_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Alquiler" EntitySet="Alquiler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Alquiler_Habitaciones" Association="Self.FK_Alquiler_Habitaciones">
+      <End Role="Habitaciones" EntitySet="Habitaciones" />
+      <End Role="Alquiler" EntitySet="Alquiler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Alquiler_Usuarios" Association="Self.FK_Alquiler_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Alquiler" EntitySet="Alquiler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clientes_Personas" Association="Self.FK_Clientes_Personas">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_Personas" Association="Self.FK_Empleados_Personas">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Habitaciones_TipoHabitaciones" Association="Self.FK_Habitaciones_TipoHabitaciones">
+      <End Role="TipoHabitaciones" EntitySet="TipoHabitaciones" />
+      <End Role="Habitaciones" EntitySet="Habitaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Empleados" Association="Self.FK_Usuarios_Empleados">
+      <End Role="Empleados" EntitySet="Empleados" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

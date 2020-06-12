@@ -1,0 +1,62 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Net.Mail;
+
+namespace AplicacionWebHotel.Modelo
+{
+    public class Correo
+    {
+        public string destinataerio { get; set; }
+        public string mensaje { get; set; }
+        public string asunto { get; set; }
+        public string remitente { get; set; }
+        public bool estado { get; set; }
+        public string error { get; set; }
+        MailMessage email = new MailMessage();
+
+        public Correo()
+        {
+
+        }
+        /// <summary>
+        /// Constructor clase correo. 
+        /// </summary>
+        /// <param name="destinatario">destinatario@servidor.com</param>
+        /// <param name="remitente">remitente@servidor.com</param>
+        /// <param name="asunto">titulo del mensjae</param>
+        /// <param name="mensaje">Cuerpo del mensaje</param>
+        public Correo(string destinatario, string remitente, string asunto, string mensaje)
+        {                   
+            email.To.Add(destinatario);
+            email.From = new MailAddress(remitente, "César M. Cuéllar", System.Text.Encoding.UTF8);
+            email.Subject = asunto;
+            email.SubjectEncoding = System.Text.Encoding.UTF8;
+            email.Body = mensaje;
+            email.BodyEncoding = System.Text.Encoding.UTF8;
+            email.IsBodyHtml = true;           
+        }
+        public bool envioCorreo()
+        {
+            bool enviado = false;
+            SmtpClient protocolo = new SmtpClient();
+            //dirección de correo electrónico que permite el envío del correo
+            protocolo.Credentials = new System.Net.NetworkCredential("cuenta de correo con la que va a enviar el correo", "suclavedecorreo");
+            protocolo.Port = 587;
+            protocolo.Host = "smtp.gmail.com";
+            protocolo.EnableSsl = true;
+            try
+            {
+                protocolo.Send(email);
+                estado = true;
+            }
+            catch (SmtpException ex)
+            {
+                estado = false;
+                error = ex.Message;
+            }
+            return enviado;
+        }
+    }
+}

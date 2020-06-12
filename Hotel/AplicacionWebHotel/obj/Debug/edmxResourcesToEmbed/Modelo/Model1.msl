@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HotelModelStoreContainer" CdmEntityContainer="HotelEntities">
+    <EntitySetMapping Name="Alquiler">
+      <EntityTypeMapping TypeName="HotelModel.Alquiler">
+        <MappingFragment StoreEntitySet="Alquiler">
+          <ScalarProperty Name="idAlquiler" ColumnName="idAlquiler" />
+          <ScalarProperty Name="alqHabitacion" ColumnName="alqHabitacion" />
+          <ScalarProperty Name="alqCliente" ColumnName="alqCliente" />
+          <ScalarProperty Name="alqFechaIngreso" ColumnName="alqFechaIngreso" />
+          <ScalarProperty Name="alqFechaSalida" ColumnName="alqFechaSalida" />
+          <ScalarProperty Name="alqObservacion" ColumnName="alqObservacion" />
+          <ScalarProperty Name="alqEstado" ColumnName="alqEstado" />
+          <ScalarProperty Name="alqCostoTotal" ColumnName="alqCostoTotal" />
+          <ScalarProperty Name="alqUsuario" ColumnName="alqUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="HotelModel.Clientes">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="cliPersona" ColumnName="cliPersona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contactenos">
+      <EntityTypeMapping TypeName="HotelModel.Contactenos">
+        <MappingFragment StoreEntitySet="Contactenos">
+          <ScalarProperty Name="idContactenos" ColumnName="idContactenos" />
+          <ScalarProperty Name="conNombre" ColumnName="conNombre" />
+          <ScalarProperty Name="conCorreo" ColumnName="conCorreo" />
+          <ScalarProperty Name="conComentario" ColumnName="conComentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleados">
+      <EntityTypeMapping TypeName="HotelModel.Empleados">
+        <MappingFragment StoreEntitySet="Empleados">
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+          <ScalarProperty Name="empPersona" ColumnName="empPersona" />
+          <ScalarProperty Name="empCargo" ColumnName="empCargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Habitaciones">
+      <EntityTypeMapping TypeName="HotelModel.Habitaciones">
+        <MappingFragment StoreEntitySet="Habitaciones">
+          <ScalarProperty Name="idHabitacion" ColumnName="idHabitacion" />
+          <ScalarProperty Name="habNumero" ColumnName="habNumero" />
+          <ScalarProperty Name="habPiso" ColumnName="habPiso" />
+          <ScalarProperty Name="habDescripcion" ColumnName="habDescripcion" />
+          <ScalarProperty Name="habEstado" ColumnName="habEstado" />
+          <ScalarProperty Name="habTipoHabitacion" ColumnName="habTipoHabitacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personas">
+      <EntityTypeMapping TypeName="HotelModel.Personas">
+        <MappingFragment StoreEntitySet="Personas">
+          <ScalarProperty Name="idPersona" ColumnName="idPersona" />
+          <ScalarProperty Name="perIdentificacion" ColumnName="perIdentificacion" />
+          <ScalarProperty Name="perNombre" ColumnName="perNombre" />
+          <ScalarProperty Name="perCorreo" ColumnName="perCorreo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoHabitaciones">
+      <EntityTypeMapping TypeName="HotelModel.TipoHabitaciones">
+        <MappingFragment StoreEntitySet="TipoHabitaciones">
+          <ScalarProperty Name="idTipoHabitacion" ColumnName="idTipoHabitacion" />
+          <ScalarProperty Name="tipNombre" ColumnName="tipNombre" />
+          <ScalarProperty Name="tipCosto" ColumnName="tipCosto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="HotelModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="usuEmpleado" ColumnName="usuEmpleado" />
+          <ScalarProperty Name="usuLogin" ColumnName="usuLogin" />
+          <ScalarProperty Name="usuPassword" ColumnName="usuPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

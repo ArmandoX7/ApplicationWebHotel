@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{426AFE52-87B1-468C-9A38-F4E48B4B22F6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AplicacionWebHotel</RootNamespace>
+    <AssemblyName>AplicacionWebHotel</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>D:\SENA2017\Trabajo 2017\Portafolio Cesar Marino Cuellar Chacon semestre 1\Fichas\Ficha 1094253\Guias de Aprendizaje\Actividades 2017\Actividades Marzo 14 de 2017\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>D:\SENA2017\Trabajo 2017\Portafolio Cesar Marino Cuellar Chacon semestre 1\Fichas\Ficha 1094253\Guias de Aprendizaje\Actividades 2017\Actividades Marzo 14 de 2017\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker">
+      <HintPath>D:\SENA2017\Trabajo 2017\Portafolio Cesar Marino Cuellar Chacon semestre 1\Fichas\Ficha 1094253\Guias de Aprendizaje\Actividades 2017\Actividades Marzo 14 de 2017\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\SENA2017\Trabajo 2017\Portafolio Cesar Marino Cuellar Chacon semestre 1\Fichas\Ficha 1094253\Guias de Aprendizaje\Actividades 2017\Actividades Marzo 14 de 2017\Json90r1\Bin\Net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\estiloMenu.css" />
+    <Content Include="Css\estilos.css" />
+    <Content Include="Css\footer.css" />
+    <Content Include="Css\form.css" />
+    <Content Include="Css\header.css" />
+    <Content Include="Css\index.css" />
+    <Content Include="Css\nav.css" />
+    <Content Include="Css\template.css" />
+    <Content Include="Js\ajax.js" />
+    <Content Include="Js\Ajax2.js" />
+    <Content Include="Js\Ajax3.js" />
+    <Content Include="Js\funciones.js" />
+    <Content Include="Js\graficasGoogle.js" />
+    <Content Include="Modelo\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Modelo\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Recursos\Imagenes\consultar.png" />
+    <Content Include="Recursos\Imagenes\csv.png" />
+    <Content Include="Recursos\Imagenes\logo.jpg" />
+    <Content Include="Recursos\Imagenes\logo.png" />
+    <Content Include="Recursos\Imagenes\pdf.png" />
+    <Content Include="Recursos\Librerias\jquery\AUTHORS.txt" />
+    <Content Include="Recursos\Librerias\jquery\external\jquery\jquery.js" />
+    <Content Include="Recursos\Librerias\jquery\images\ui-bg_diagonals-thick_75_f3d8d8_40x40.png" />
+    <Content Include="Recursos\Librerias\jquery\images\ui-bg_dots-small_65_a6a6a6_2x2.png" />
+    <Content Include="Recursos\Librerias\jquery\images\ui-bg_glass_55_fbf8ee_1x400.png" />
+    <Content Include="Recursos\Librerias\jquery\images\ui-bg_highlight-hard_100_eeeeee_1x100.png" />
+    <Content Include="Recursos\Librerias\jquery\images\ui-bg_highlight-hard_100_f6f6f6_1x100.png" />
+    <Content Include="Recursos\Librerias\jquery\images\ui-bg_highlight-soft_15_cc0000_1x100.png" />
+    <Content Include="Recursos\Librerias\jquery\images\ui-icons_004276_256x240.png" />
+    <Content Include="Recursos\Librerias\jquery\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Recursos\Librerias\jquery\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Recursos\Librerias\jquery\index.html" />
+    <Content Include="Recursos\Librerias\jquery\jquery-ui.css" />
+    <Content Include="Recursos\Librerias\jquery\jquery-ui.js" />
+    <Content Include="Recursos\Librerias\jquery\jquery-ui.min.css" />
+    <Content Include="Recursos\Librerias\jquery\jquery-ui.min.js" />
+    <Content Include="Recursos\Librerias\jquery\jquery-ui.structure.css" />
+    <Content Include="Recursos\Librerias\jquery\jquery-ui.structure.min.css" />
+    <Content Include="Recursos\Librerias\jquery\jquery-ui.theme.css" />
+    <Content Include="Recursos\Librerias\jquery\jquery-ui.theme.min.css" />
+    <Content Include="Recursos\Librerias\jquery\LICENSE.txt" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="HotelDataSet.xsc">
+      <DependentUpon>HotelDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="HotelDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HotelDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="HotelDataSet.xss">
+      <DependentUpon>HotelDataSet.xsd</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Modelo\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Modelo\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Recursos\Librerias\Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Recursos\Librerias\Scripts\jquery-3.1.1.js" />
+    <Content Include="Recursos\Librerias\Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Recursos\Librerias\Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Recursos\Librerias\Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Vista\default.aspx" />
+    <Content Include="Vista\Formulario web1.aspx" />
+    <Content Include="Vista\Fotos\78.jpg" />
+    <Content Include="Vista\frmContactenos.aspx" />
+    <Content Include="Vista\frmIniciarSesion.aspx" />
+    <Content Include="Vista\frmInicioSesion.aspx" />
+    <Content Include="Vista\Gerente\default.aspx" />
+    <Content Include="Vista\Gerente\frmAgregarEmpleado.aspx" />
+    <Content Include="Vista\Gerente\frmAgregarEmpleado2.aspx" />
+    <Content Include="Vista\Gerente\frmAgregarHabitacion.aspx" />
+    <Content Include="Vista\Gerente\FrmConsultarHabitacionesAlquiladasPorRango.aspx" />
+    <Content Include="Vista\Gerente\frmListarHabitacionesPorRango.aspx" />
+    <Content Include="Vista\Gerente\frmReportesGerente.aspx" />
+    <Content Include="Vista\Gerente\frmReportesGraficas.aspx" />
+    <Content Include="Vista\Gerente\menu.aspx" />
+    <Content Include="Vista\index.aspx" />
+    <Content Include="Vista\menu.aspx" />
+    <Content Include="Vista\Recepcionista\default.aspx" />
+    <Content Include="Vista\Gerente\frmActualizarDescripcion.aspx" />
+    <Content Include="Vista\Recepcionista\frmAgregarAlquiler.aspx" />
+    <Content Include="Vista\Recepcionista\FrmAgregarCliente.aspx" />
+    <Content Include="Vista\Recepcionista\frmEjemploPdf.aspx" />
+    <Content Include="Vista\Recepcionista\frmEntregarHabitacion.aspx" />
+    <Content Include="Vista\Recepcionista\frmListarAlquiladas.aspx" />
+    <Content Include="Vista\Recepcionista\frmReportesRecepcionista.aspx" />
+    <Content Include="Vista\Recepcionista\menu.aspx" />
+    <Content Include="Vista\Recepcionista\SolicitudesAjax.aspx" />
+    <Content Include="Vista\salir.aspx" />
+    <Content Include="Vista\ServiceAjax.svc" />
+    <Content Include="Vista\SolicitudAjax.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controlador\ControllerContactenos.cs" />
+    <Compile Include="Controlador\ControllerAlquiler.cs" />
+    <Compile Include="Controlador\ControllerCliente.cs" />
+    <Compile Include="Controlador\ControllerEmpleado.cs" />
+    <Compile Include="Controlador\ControllerHabitacion.cs" />
+    <Compile Include="HotelDataSet.cs">
+      <DependentUpon>HotelDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HotelDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Alquiler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Cliente.cs" />
+    <Compile Include="Modelo\Clientes.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Conexion.cs" />
+    <Compile Include="Modelo\Contactenos.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Correo.cs" />
+    <Compile Include="Modelo\DatosAlquiler.cs" />
+    <Compile Include="Modelo\DatosCliente.cs" />
+    <Compile Include="Modelo\DatosContactenos.cs" />
+    <Compile Include="Modelo\DatosEmpleado.cs" />
+    <Compile Include="Modelo\DatosHabitacion.cs" />
+    <Compile Include="Modelo\Empleado.cs" />
+    <Compile Include="Modelo\Empleados.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Habitacion.cs" />
+    <Compile Include="Modelo\Habitaciones.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Persona.cs" />
+    <Compile Include="Modelo\Personas.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\TipoHabitacion.cs" />
+    <Compile Include="Modelo\TipoHabitaciones.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Usuarios.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Formulario web1.aspx.cs">
+      <DependentUpon>Formulario web1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Formulario web1.aspx.designer.cs">
+      <DependentUpon>Formulario web1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmContactenos.aspx.cs">
+      <DependentUpon>frmContactenos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\frmContactenos.aspx.designer.cs">
+      <DependentUpon>frmContactenos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmIniciarSesion.aspx.cs">
+      <DependentUpon>frmIniciarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\frmIniciarSesion.aspx.designer.cs">
+      <DependentUpon>frmIniciarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmInicioSesion.aspx.cs">
+      <DependentUpon>frmInicioSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\frmInicioSesion.aspx.designer.cs">
+      <DependentUpon>frmInicioSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gerente\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Gerente\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gerente\frmAgregarEmpleado.aspx.cs">
+      <DependentUpon>frmAgregarEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Gerente\frmAgregarEmpleado.aspx.designer.cs">
+      <DependentUpon>frmAgregarEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gerente\frmAgregarEmpleado2.aspx.cs">
+      <DependentUpon>frmAgregarEmpleado2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Gerente\frmAgregarEmpleado2.aspx.designer.cs">
+      <DependentUpon>frmAgregarEmpleado2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gerente\frmAgregarHabitacion.aspx.cs">
+      <DependentUpon>frmAgregarHabitacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Gerente\frmAgregarHabitacion.aspx.designer.cs">
+      <DependentUpon>frmAgregarHabitacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gerente\FrmConsultarHabitacionesAlquiladasPorRango.aspx.cs">
+      <DependentUpon>FrmConsultarHabitacionesAlquiladasPorRango.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Gerente\FrmConsultarHabitacionesAlquiladasPorRango.aspx.designer.cs">
+      <DependentUpon>FrmConsultarHabitacionesAlquiladasPorRango.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gerente\frmListarHabitacionesPorRango.aspx.cs">
+      <DependentUpon>frmListarHabitacionesPorRango.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Gerente\frmListarHabitacionesPorRango.aspx.designer.cs">
+      <DependentUpon>frmListarHabitacionesPorRango.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gerente\frmReportesGerente.aspx.cs">
+      <DependentUpon>frmReportesGerente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Gerente\frmReportesGerente.aspx.designer.cs">
+      <DependentUpon>frmReportesGerente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gerente\frmReportesGraficas.aspx.cs">
+      <DependentUpon>frmReportesGraficas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Gerente\frmReportesGraficas.aspx.designer.cs">
+      <DependentUpon>frmReportesGraficas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gerente\menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Gerente\menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\paginaMaestra.Master.cs">
+      <DependentUpon>paginaMaestra.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\paginaMaestra.Master.designer.cs">
+      <DependentUpon>paginaMaestra.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\paginaPrincipal.Master.cs">
+      <DependentUpon>paginaPrincipal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\paginaPrincipal.Master.designer.cs">
+      <DependentUpon>paginaPrincipal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gerente\frmActualizarDescripcion.aspx.cs">
+      <DependentUpon>frmActualizarDescripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Gerente\frmActualizarDescripcion.aspx.designer.cs">
+      <DependentUpon>frmActualizarDescripcion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\frmAgregarAlquiler.aspx.cs">
+      <DependentUpon>frmAgregarAlquiler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\frmAgregarAlquiler.aspx.designer.cs">
+      <DependentUpon>frmAgregarAlquiler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\FrmAgregarCliente.aspx.cs">
+      <DependentUpon>FrmAgregarCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\FrmAgregarCliente.aspx.designer.cs">
+      <DependentUpon>FrmAgregarCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\frmEjemploPdf.aspx.cs">
+      <DependentUpon>frmEjemploPdf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\frmEjemploPdf.aspx.designer.cs">
+      <DependentUpon>frmEjemploPdf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\frmEntregarHabitacion.aspx.cs">
+      <DependentUpon>frmEntregarHabitacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\frmEntregarHabitacion.aspx.designer.cs">
+      <DependentUpon>frmEntregarHabitacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\frmListarAlquiladas.aspx.cs">
+      <DependentUpon>frmListarAlquiladas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\frmListarAlquiladas.aspx.designer.cs">
+      <DependentUpon>frmListarAlquiladas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\frmReportesRecepcionista.aspx.cs">
+      <DependentUpon>frmReportesRecepcionista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\frmReportesRecepcionista.aspx.designer.cs">
+      <DependentUpon>frmReportesRecepcionista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\SolicitudesAjax.aspx.cs">
+      <DependentUpon>SolicitudesAjax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Recepcionista\SolicitudesAjax.aspx.designer.cs">
+      <DependentUpon>SolicitudesAjax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\salir.aspx.cs">
+      <DependentUpon>salir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\salir.aspx.designer.cs">
+      <DependentUpon>salir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ServiceAjax.svc.cs">
+      <DependentUpon>ServiceAjax.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\SolicitudAjax.aspx.cs">
+      <DependentUpon>SolicitudAjax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\SolicitudAjax.aspx.designer.cs">
+      <DependentUpon>SolicitudAjax.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Recursos\Librerias\jquery\package.json" />
+    <Content Include="Recursos\Librerias\Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Recursos\Librerias\Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Vista\paginaMaestra.Master" />
+    <Content Include="Vista\paginaPrincipal.Master" />
+    <Content Include="Recursos\Prueba.pdf" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vista\Gerente\Report1.rdlc" />
+    <EmbeddedResource Include="Vista\Gerente\reporteGraficoHabitacionesPorTipo.rdlc" />
+    <EmbeddedResource Include="Vista\Gerente\ReportEmpleados.rdlc" />
+    <EmbeddedResource Include="Vista\Gerente\reporteVistaCantidadHabitaciones.rdlc" />
+    <EmbeddedResource Include="Vista\Gerente\ReportHabitaciones.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54880</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54880/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

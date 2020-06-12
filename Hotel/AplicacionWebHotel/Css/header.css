@@ -1,0 +1,29 @@
+header .logo{
+    width: 10%;
+    height: 150px;
+    background-image: url(../Recursos/Imagenes/logo.png);
+    background-size: 100%;  
+    position: absolute;
+    left: 30px;
+    top: 1px;
+}
+
+header .texto{ 
+    width: 80%;
+    height: 150px;   
+    background-size: 100%;     
+    position: absolute;      
+    font-size:xx-large;
+    color: darkslateblue;
+    left: 160px;
+}
+header .logo2{
+    width: 10%;
+    height: 150px;
+    background-image: url(../Recursos/Imagenes/logo.png);
+    background-size: 100%;  
+    position: absolute;
+    right:30px;
+    top: 1px;
+}
+

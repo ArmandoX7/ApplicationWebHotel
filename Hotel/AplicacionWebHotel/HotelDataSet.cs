@@ -1,0 +1,7 @@
+﻿namespace AplicacionWebHotel
+{
+}
+
+namespace AplicacionWebHotel
+{
+}

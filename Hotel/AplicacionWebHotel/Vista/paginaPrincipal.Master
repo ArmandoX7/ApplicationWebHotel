@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="paginaPrincipal.master.cs" Inherits="AplicacionWebHotel.Vista.paginaPrincipal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div id="contenedor">
+            <header class="principal">
+                <h1>HOTEL SENA ADSI 1094253</h1>
+            </header>
+            <nav class="principal">
+                <% Response.WriteFile("menu.aspx"); %>
+            </nav>
+            <section class="contenido">
+                <br />
+                <asp:ContentPlaceHolder ID="ContentPlaceHolderContenido" runat="server">
+                </asp:ContentPlaceHolder>
+            </section>
+            <footer class="principal">
+                <p> Calle 4 No. 2-80 - Celular: 2555555 . Email. hotel@sena.edu.co</p>
+            </footer>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
