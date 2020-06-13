@@ -10,7 +10,7 @@
     Core: General style
 ----------------------------
 */
-html,
+html
 body {
   overflow-x: hidden!important;
   font-family: 'Source Sans Pro', sans-serif;
@@ -2394,6 +2394,7 @@ Component: timeline
 .form-box {
   width: 360px;
   margin: 90px auto 0 auto;
+    height: 325px;
 }
 .form-box .header {
   -webkit-border-top-left-radius: 4px;

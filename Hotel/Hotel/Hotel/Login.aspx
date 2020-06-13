@@ -23,9 +23,11 @@
                     <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="Ingrese contraseña"></asp:TextBox>
                 </div>
             </div>
+            <div>
+                <asp:Label ID="lblRegistro" runat="server" Text="Registrase" CssClass="form-control"></asp:Label>
+            </div>
             <div class="footer">
-
-                <asp:Button ID="btnIngresar" runat="server" Text="Iniciar Sesion" CssClass="btn bg-green-gradient btn-block" type="password" OnClick="btnIngresar_Click" />
+                <asp:Button ID="btnIngresar" runat="server" Text="Iniciar Sesion" CssClass="btn bg-green-gradient btn-block" OnClick="btnIngresar_Click" />
             </div>
         </form>
      </div>

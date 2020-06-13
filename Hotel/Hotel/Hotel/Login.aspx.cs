@@ -29,7 +29,7 @@ namespace Hotel
             {
                 Response.Write("<script>alert('Usuario y contraseña incorrectas')</script>");
                 txtUsuario.Text = "";
-                txtPassword.Text = "";
+                txtPassword.Text="";
             }
 
         }
