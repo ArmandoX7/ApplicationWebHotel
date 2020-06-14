@@ -1,0 +1,46 @@
+﻿@model IEnumerable<hotelv3.Models.queja>
+
+@{
+    ViewBag.Title = "Quejas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Quejas registradas</h2>
+
+<p>
+    @Html.ActionLink("Crear nueva", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hora)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hora)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idQueja }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idQueja }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idQueja })
+        </td>
+    </tr>
+}
+
+</table>

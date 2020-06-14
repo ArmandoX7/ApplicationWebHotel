@@ -1,0 +1,112 @@
+﻿@model IEnumerable<hotelv3.Models.huesped>
+
+@{
+    ViewBag.Title = "Huespedes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Huespedes registrados</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idHuesped)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido_pat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido_mat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.edad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_nac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lugar_nac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tel_casa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tel_celular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rfc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numVisita)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.idHuesped)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nombres)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.apellido_pat)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.apellido_mat)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.edad)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.sexo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.fecha_nac)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.lugar_nac)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.direccion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tel_casa)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tel_celular)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.correo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.rfc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.numVisita)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id = item.idHuesped }) |
+        @Html.ActionLink("Detalles", "Details", new { id = item.idHuesped }) |
+        @Html.ActionLink("Eliminar", "Delete", new { id = item.idHuesped })
+    </td>
+</tr>
+}
+
+</table>

@@ -1,0 +1,83 @@
+﻿@model hotelv3.Models.factura
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles de la Factura</h2>
+
+<div>
+    <h4>factura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreEmisor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreEmisor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telEmisor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telEmisor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumo.idConsumo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumo.idConsumo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.huesped.nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.huesped.nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.registro.idHabitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.registro.idHabitacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.numFactura }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

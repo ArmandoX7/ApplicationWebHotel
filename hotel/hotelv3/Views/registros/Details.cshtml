@@ -1,0 +1,67 @@
+﻿@model hotelv3.Models.registro
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles del registro</h2>
+
+<div>
+    <h4>registro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descuento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descuento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.habitacion.tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.habitacion.tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.huesped.nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.huesped.nombres)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idRegistro }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

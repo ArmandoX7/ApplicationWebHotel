@@ -1,0 +1,129 @@
+﻿@model hotelv3.Models.huesped
+
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar Huesped</h2>
+
+<h3>¿Estás seguro de que quieres eliminar esto?</h3>
+<div>
+    <h4>huesped</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido_pat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido_pat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido_mat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido_mat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.edad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_nac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_nac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lugar_nac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lugar_nac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tel_casa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tel_casa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tel_celular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tel_celular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.correo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rfc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rfc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numVisita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numVisita)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </div>
+    }
+</div>

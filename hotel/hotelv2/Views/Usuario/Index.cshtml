@@ -1,0 +1,31 @@
+﻿@using hotelv2.Models
+@model List<UsuarioCLS>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Usuarios</h2>
+@Html.ActionLink("Agregar","Agregar","Usuario",null, new { @class="btn btn-primary" })
+
+<table>
+    <thead class="table table-bordered table-hover">
+        <tr>
+            <td>@Html.LabelFor(p => Model[0].idUser)</td>
+            <td>@Html.LabelFor(p => Model[0].email)</td>
+            <td>@Html.LabelFor(p => Model[0].password)</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td width="20%">@item.idUser</td>
+                <td width="40%">@item.email</td>
+                <td width="25%">@item.password</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

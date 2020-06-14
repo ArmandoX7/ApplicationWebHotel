@@ -1,0 +1,53 @@
+﻿@using hotelv2.Models
+@model List<HuespedCLS>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Huespedes</h2>
+
+@Html.ActionLink("Agregar", "Agregar", "Huesped", null, new { @class = "btn btn-primary" })
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <td>@Html.LabelFor(p => Model[0].idHuesped)</td>
+            <td>@Html.LabelFor(p => Model[0].nombres)</td>
+            <td>@Html.LabelFor(p => Model[0].apellido_pat)</td>
+            <td>@Html.LabelFor(p => Model[0].apellido_mat)</td>
+            <td>@Html.LabelFor(p => Model[0].edad)</td>
+            <td>@Html.LabelFor(p => Model[0].sexo)</td>
+            <td>@Html.LabelFor(p => Model[0].fecha_nac)</td>
+            <td>@Html.LabelFor(p => Model[0].lugar_nac)</td>
+            <td>@Html.LabelFor(p => Model[0].direccion)</td>
+            <td>@Html.LabelFor(p => Model[0].tel_casa)</td>
+            <td>@Html.LabelFor(p => Model[0].tel_celular)</td>
+            <td>@Html.LabelFor(p => Model[0].correo)</td>
+            <td>@Html.LabelFor(p => Model[0].rfc)</td>
+            <td>@Html.LabelFor(p => Model[0].numVisita)</td>
+
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.idHuesped</td>
+            <td>@item.nombres</td>
+            <td>@item.apellido_pat</td>
+            <td>@item.apellido_mat</td>
+            <td>@item.edad</td>
+            <td>@item.sexo</td>
+            <td>@item.fecha_nac</td>
+            <td>@item.lugar_nac</td>
+            <td>@item.direccion</td>
+            <td>@item.tel_casa</td>
+            <td>@item.tel_celular</td>
+            <td>@item.correo</td>
+            <td>@item.rfc</td>
+            <td>@item.numVisita</td>
+        </tr>
+    }
+
+    <tbody>
+    </tbody>
+</table>

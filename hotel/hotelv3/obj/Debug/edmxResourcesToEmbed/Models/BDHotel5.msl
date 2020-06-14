@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="hotel5ModelStoreContainer" CdmEntityContainer="hotel5Entities2">
+    <EntitySetMapping Name="consumo">
+      <EntityTypeMapping TypeName="hotel5Model.consumo">
+        <MappingFragment StoreEntitySet="consumo">
+          <ScalarProperty Name="idConsumo" ColumnName="idConsumo" />
+          <ScalarProperty Name="idHuesped" ColumnName="idHuesped" />
+          <ScalarProperty Name="idServicio" ColumnName="idServicio" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empleado">
+      <EntityTypeMapping TypeName="hotel5Model.empleado">
+        <MappingFragment StoreEntitySet="empleado">
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido_pat" ColumnName="apellido_pat" />
+          <ScalarProperty Name="apellido_mat" ColumnName="apellido_mat" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="rfc" ColumnName="rfc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="factura">
+      <EntityTypeMapping TypeName="hotel5Model.factura">
+        <MappingFragment StoreEntitySet="factura">
+          <ScalarProperty Name="numFactura" ColumnName="numFactura" />
+          <ScalarProperty Name="nombreEmisor" ColumnName="nombreEmisor" />
+          <ScalarProperty Name="telEmisor" ColumnName="telEmisor" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="idHuesped" ColumnName="idHuesped" />
+          <ScalarProperty Name="idRegistro" ColumnName="idRegistro" />
+          <ScalarProperty Name="idConsumo" ColumnName="idConsumo" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="habitacion">
+      <EntityTypeMapping TypeName="hotel5Model.habitacion">
+        <MappingFragment StoreEntitySet="habitacion">
+          <ScalarProperty Name="idHabitacion" ColumnName="idHabitacion" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="capacidad" ColumnName="capacidad" />
+          <ScalarProperty Name="disponibilidad" ColumnName="disponibilidad" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="huesped">
+      <EntityTypeMapping TypeName="hotel5Model.huesped">
+        <MappingFragment StoreEntitySet="huesped">
+          <ScalarProperty Name="idHuesped" ColumnName="idHuesped" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellido_pat" ColumnName="apellido_pat" />
+          <ScalarProperty Name="apellido_mat" ColumnName="apellido_mat" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="fecha_nac" ColumnName="fecha_nac" />
+          <ScalarProperty Name="lugar_nac" ColumnName="lugar_nac" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="tel_casa" ColumnName="tel_casa" />
+          <ScalarProperty Name="tel_celular" ColumnName="tel_celular" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="rfc" ColumnName="rfc" />
+          <ScalarProperty Name="numVisita" ColumnName="numVisita" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="queja">
+      <EntityTypeMapping TypeName="hotel5Model.queja">
+        <MappingFragment StoreEntitySet="queja">
+          <ScalarProperty Name="idQueja" ColumnName="idQueja" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="registro">
+      <EntityTypeMapping TypeName="hotel5Model.registro">
+        <MappingFragment StoreEntitySet="registro">
+          <ScalarProperty Name="idRegistro" ColumnName="idRegistro" />
+          <ScalarProperty Name="idHuesped" ColumnName="idHuesped" />
+          <ScalarProperty Name="idHabitacion" ColumnName="idHabitacion" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="dias" ColumnName="dias" />
+          <ScalarProperty Name="descuento" ColumnName="descuento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="satisfaccion">
+      <EntityTypeMapping TypeName="hotel5Model.satisfaccion">
+        <MappingFragment StoreEntitySet="satisfaccion">
+          <ScalarProperty Name="idSatisfaccion" ColumnName="idSatisfaccion" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="calificacion" ColumnName="calificacion" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="servicio">
+      <EntityTypeMapping TypeName="hotel5Model.servicio">
+        <MappingFragment StoreEntitySet="servicio">
+          <ScalarProperty Name="idServicio" ColumnName="idServicio" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="costo" ColumnName="costo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="hotel5Model.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

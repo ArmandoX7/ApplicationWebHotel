@@ -1,0 +1,70 @@
+﻿@model IEnumerable<hotelv3.Models.empleado>
+
+@{
+    ViewBag.Title = "Empleados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Empleados Registrados</h2>
+
+<p>
+    @Html.ActionLink("Registrar nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido_pat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido_mat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rfc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido_pat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido_mat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rfc)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idEmpleado }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idEmpleado }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idEmpleado })
+        </td>
+    </tr>
+}
+
+</table>

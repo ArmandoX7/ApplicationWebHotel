@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hotel5Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="consumo">
+    <Key>
+      <PropertyRef Name="idConsumo" />
+    </Key>
+    <Property Name="idConsumo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idHuesped" Type="Int32" Nullable="false" />
+    <Property Name="idServicio" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
+    <NavigationProperty Name="factura" Relationship="Self.fk_idConsumo" FromRole="consumo" ToRole="factura" />
+    <NavigationProperty Name="huesped" Relationship="Self.fk_idHuesped2" FromRole="consumo" ToRole="huesped" />
+    <NavigationProperty Name="servicio" Relationship="Self.fk_idServicio" FromRole="consumo" ToRole="servicio" />
+  </EntityType>
+  <EntityType Name="empleado">
+    <Key>
+      <PropertyRef Name="idEmpleado" />
+    </Key>
+    <Property Name="idEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellido_pat" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellido_mat" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sexo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="correo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rfc" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="factura">
+    <Key>
+      <PropertyRef Name="numFactura" />
+    </Key>
+    <Property Name="numFactura" Type="Int32" Nullable="false" />
+    <Property Name="nombreEmisor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telEmisor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Precision="0" />
+    <Property Name="hora" Type="Time" Precision="7" />
+    <Property Name="idHuesped" Type="Int32" Nullable="false" />
+    <Property Name="idRegistro" Type="Int32" Nullable="false" />
+    <Property Name="idConsumo" Type="Int32" Nullable="false" />
+    <Property Name="total" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="consumo" Relationship="Self.fk_idConsumo" FromRole="factura" ToRole="consumo" />
+    <NavigationProperty Name="huesped" Relationship="Self.fk_idHuesped3" FromRole="factura" ToRole="huesped" />
+    <NavigationProperty Name="registro" Relationship="Self.fk_idRegistro" FromRole="factura" ToRole="registro" />
+  </EntityType>
+  <EntityType Name="habitacion">
+    <Key>
+      <PropertyRef Name="idHabitacion" />
+    </Key>
+    <Property Name="idHabitacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="capacidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="disponibilidad" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="registro" Relationship="Self.fk_idHabitacion" FromRole="habitacion" ToRole="registro" />
+  </EntityType>
+  <EntityType Name="huesped">
+    <Key>
+      <PropertyRef Name="idHuesped" />
+    </Key>
+    <Property Name="idHuesped" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombres" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellido_pat" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellido_mat" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="edad" Type="Int32" Nullable="false" />
+    <Property Name="sexo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_nac" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="lugar_nac" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tel_casa" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tel_celular" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="correo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rfc" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="numVisita" Type="Int32" />
+    <NavigationProperty Name="consumo" Relationship="Self.fk_idHuesped2" FromRole="huesped" ToRole="consumo" />
+    <NavigationProperty Name="factura" Relationship="Self.fk_idHuesped3" FromRole="huesped" ToRole="factura" />
+    <NavigationProperty Name="registro" Relationship="Self.fk_idHuesped" FromRole="huesped" ToRole="registro" />
+  </EntityType>
+  <EntityType Name="queja">
+    <Key>
+      <PropertyRef Name="idQueja" />
+    </Key>
+    <Property Name="idQueja" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="fecha" Type="DateTime" Precision="0" />
+    <Property Name="hora" Type="Time" Precision="7" />
+  </EntityType>
+  <EntityType Name="registro">
+    <Key>
+      <PropertyRef Name="idRegistro" />
+    </Key>
+    <Property Name="idRegistro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idHuesped" Type="Int32" Nullable="false" />
+    <Property Name="idHabitacion" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="dias" Type="Int32" Nullable="false" />
+    <Property Name="descuento" Type="Int32" />
+    <NavigationProperty Name="factura" Relationship="Self.fk_idRegistro" FromRole="registro" ToRole="factura" />
+    <NavigationProperty Name="habitacion" Relationship="Self.fk_idHabitacion" FromRole="registro" ToRole="habitacion" />
+    <NavigationProperty Name="huesped" Relationship="Self.fk_idHuesped" FromRole="registro" ToRole="huesped" />
+  </EntityType>
+  <EntityType Name="satisfaccion">
+    <Key>
+      <PropertyRef Name="idSatisfaccion" />
+    </Key>
+    <Property Name="idSatisfaccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="calificacion" Type="Int32" />
+    <Property Name="fecha" Type="DateTime" Precision="0" />
+    <Property Name="hora" Type="Time" Precision="7" />
+  </EntityType>
+  <EntityType Name="servicio">
+    <Key>
+      <PropertyRef Name="idServicio" />
+    </Key>
+    <Property Name="idServicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Precision="0" />
+    <Property Name="hora" Type="Time" Precision="7" />
+    <Property Name="costo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="consumo" Relationship="Self.fk_idServicio" FromRole="servicio" ToRole="consumo" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_idConsumo">
+    <End Role="consumo" Type="Self.consumo" Multiplicity="1" />
+    <End Role="factura" Type="Self.factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="consumo">
+        <PropertyRef Name="idConsumo" />
+      </Principal>
+      <Dependent Role="factura">
+        <PropertyRef Name="idConsumo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_idHuesped2">
+    <End Role="huesped" Type="Self.huesped" Multiplicity="1" />
+    <End Role="consumo" Type="Self.consumo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="huesped">
+        <PropertyRef Name="idHuesped" />
+      </Principal>
+      <Dependent Role="consumo">
+        <PropertyRef Name="idHuesped" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_idServicio">
+    <End Role="servicio" Type="Self.servicio" Multiplicity="1" />
+    <End Role="consumo" Type="Self.consumo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="servicio">
+        <PropertyRef Name="idServicio" />
+      </Principal>
+      <Dependent Role="consumo">
+        <PropertyRef Name="idServicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_idHuesped3">
+    <End Role="huesped" Type="Self.huesped" Multiplicity="1" />
+    <End Role="factura" Type="Self.factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="huesped">
+        <PropertyRef Name="idHuesped" />
+      </Principal>
+      <Dependent Role="factura">
+        <PropertyRef Name="idHuesped" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_idRegistro">
+    <End Role="registro" Type="Self.registro" Multiplicity="1" />
+    <End Role="factura" Type="Self.factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="registro">
+        <PropertyRef Name="idRegistro" />
+      </Principal>
+      <Dependent Role="factura">
+        <PropertyRef Name="idRegistro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_idHabitacion">
+    <End Role="habitacion" Type="Self.habitacion" Multiplicity="1" />
+    <End Role="registro" Type="Self.registro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="habitacion">
+        <PropertyRef Name="idHabitacion" />
+      </Principal>
+      <Dependent Role="registro">
+        <PropertyRef Name="idHabitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_idHuesped">
+    <End Role="huesped" Type="Self.huesped" Multiplicity="1" />
+    <End Role="registro" Type="Self.registro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="huesped">
+        <PropertyRef Name="idHuesped" />
+      </Principal>
+      <Dependent Role="registro">
+        <PropertyRef Name="idHuesped" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="hotel5Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="consumo" EntityType="Self.consumo" />
+    <EntitySet Name="empleado" EntityType="Self.empleado" />
+    <EntitySet Name="factura" EntityType="Self.factura" />
+    <EntitySet Name="habitacion" EntityType="Self.habitacion" />
+    <EntitySet Name="huesped" EntityType="Self.huesped" />
+    <EntitySet Name="queja" EntityType="Self.queja" />
+    <EntitySet Name="registro" EntityType="Self.registro" />
+    <EntitySet Name="satisfaccion" EntityType="Self.satisfaccion" />
+    <EntitySet Name="servicio" EntityType="Self.servicio" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" />
+    <AssociationSet Name="fk_idConsumo" Association="Self.fk_idConsumo">
+      <End Role="consumo" EntitySet="consumo" />
+      <End Role="factura" EntitySet="factura" />
+    </AssociationSet>
+    <AssociationSet Name="fk_idHuesped2" Association="Self.fk_idHuesped2">
+      <End Role="huesped" EntitySet="huesped" />
+      <End Role="consumo" EntitySet="consumo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_idServicio" Association="Self.fk_idServicio">
+      <End Role="servicio" EntitySet="servicio" />
+      <End Role="consumo" EntitySet="consumo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_idHuesped3" Association="Self.fk_idHuesped3">
+      <End Role="huesped" EntitySet="huesped" />
+      <End Role="factura" EntitySet="factura" />
+    </AssociationSet>
+    <AssociationSet Name="fk_idRegistro" Association="Self.fk_idRegistro">
+      <End Role="registro" EntitySet="registro" />
+      <End Role="factura" EntitySet="factura" />
+    </AssociationSet>
+    <AssociationSet Name="fk_idHabitacion" Association="Self.fk_idHabitacion">
+      <End Role="habitacion" EntitySet="habitacion" />
+      <End Role="registro" EntitySet="registro" />
+    </AssociationSet>
+    <AssociationSet Name="fk_idHuesped" Association="Self.fk_idHuesped">
+      <End Role="huesped" EntitySet="huesped" />
+      <End Role="registro" EntitySet="registro" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
