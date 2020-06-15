@@ -5,12 +5,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Detalles de la Habitacion</h2>
+<h2>Detalles de la habitacion</h2>
 
 <div>
     <h4>habitacion</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idHabitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idHabitacion)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.tipo)
         </dt>

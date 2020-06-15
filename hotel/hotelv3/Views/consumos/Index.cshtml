@@ -1,17 +1,20 @@
 ﻿@model IEnumerable<hotelv3.Models.consumo>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Consumos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Consumos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear nuevo", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idConsumo)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.cantidad)
         </th>
@@ -33,10 +36,14 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.idConsumo)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.cantidad)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.fecha)
+            @*   @Html.DisplayFor(modelItem => item.fecha) *@
+            @item.fecha.ToString("dd/MM/yyyy")
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.hora)
@@ -50,7 +57,7 @@
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.idConsumo }) |
             @Html.ActionLink("Detalles", "Details", new { id=item.idConsumo }) |
-            @Html.ActionLink("Eleminar", "Delete", new { id=item.idConsumo })
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idConsumo })
         </td>
     </tr>
 }

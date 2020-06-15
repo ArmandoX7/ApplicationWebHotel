@@ -8,10 +8,13 @@
 <h2>Usuarios registrados</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear nuevo", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idUser)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.email)
         </th>
@@ -23,6 +26,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idUser)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.email)
         </td>

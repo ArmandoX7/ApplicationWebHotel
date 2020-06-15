@@ -1,17 +1,20 @@
 ﻿@model IEnumerable<hotelv3.Models.habitacion>
 
 @{
-    ViewBag.Title = "Habitacion";
+    ViewBag.Title = "Habitaciones";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Habitaciones del hotel</h2>
 
 <p>
-    @Html.ActionLink("Crear nuevo", "Create")
+    @Html.ActionLink("Crear nueva", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idHabitacion)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.tipo)
         </th>
@@ -29,6 +32,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idHabitacion)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.tipo)
         </td>

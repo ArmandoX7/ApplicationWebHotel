@@ -5,13 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Servicios</h2>
 
 <p>
     @Html.ActionLink("Crear nuevo", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idServicio)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.tipo)
         </th>
@@ -32,6 +35,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idServicio)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.tipo)
         </td>

@@ -47,6 +47,7 @@ namespace hotelv3.Models
         [Display(Name = "Telefono")]
         [StringLength(20, ErrorMessage = "La longitud maxima es de 20")]
         [MinLength(2, ErrorMessage = "{0} debe tener una longitud mayor a 1 caracter")]
+        [RegularExpression("(^[0-9]+$)", ErrorMessage = "Solo se permiten números")]
         public string telefono { get; set; }
 
         [Required(ErrorMessage = "{0} es requerido")]

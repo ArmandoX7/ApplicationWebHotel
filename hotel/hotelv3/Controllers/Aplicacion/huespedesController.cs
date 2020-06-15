@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using hotelv3.Models;
 
 namespace hotelv3.Controllers.Aplicacion
@@ -21,6 +22,7 @@ namespace hotelv3.Controllers.Aplicacion
         }
 
         // GET: huespedes/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -34,8 +36,10 @@ namespace hotelv3.Controllers.Aplicacion
             }
             return View(huesped);
         }
+      
 
         // GET: huespedes/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -59,6 +63,7 @@ namespace hotelv3.Controllers.Aplicacion
         }
 
         // GET: huespedes/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -90,6 +95,7 @@ namespace hotelv3.Controllers.Aplicacion
         }
 
         // GET: huespedes/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)

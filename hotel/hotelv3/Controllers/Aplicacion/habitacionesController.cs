@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using hotelv3.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using hotelv3.Models;
 
 namespace hotelv3.Controllers.Aplicacion
 {
@@ -21,7 +17,8 @@ namespace hotelv3.Controllers.Aplicacion
         }
 
         // GET: habitaciones/Details/5
-        public ActionResult Details(string id)
+        [Authorize]
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -36,6 +33,7 @@ namespace hotelv3.Controllers.Aplicacion
         }
 
         // GET: habitaciones/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -59,7 +57,8 @@ namespace hotelv3.Controllers.Aplicacion
         }
 
         // GET: habitaciones/Edit/5
-        public ActionResult Edit(string id)
+        [Authorize]
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -86,11 +85,12 @@ namespace hotelv3.Controllers.Aplicacion
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(habitacion);
+            return View(habitacion); 
         }
 
         // GET: habitaciones/Delete/5
-        public ActionResult Delete(string id)
+        [Authorize]
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -107,7 +107,7 @@ namespace hotelv3.Controllers.Aplicacion
         // POST: habitaciones/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
             habitacion habitacion = db.habitacion.Find(id);
             db.habitacion.Remove(habitacion);

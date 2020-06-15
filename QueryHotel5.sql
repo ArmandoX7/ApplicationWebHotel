@@ -95,7 +95,7 @@ constraint fk_idServicio foreign key (idServicio) references servicio(idServicio
 );
 
 create table factura(
-numFactura int not null primary key,
+numFactura int identity(1,1) not null primary key,
 nombreEmisor varchar(50) not null,
 telEmisor varchar(20) not null,
 fecha date,
@@ -108,6 +108,8 @@ constraint fk_idHuesped3 foreign key (idHuesped) references huesped(idHuesped),
 constraint fk_idRegistro foreign key (idRegistro) references registro(idRegistro),
 constraint fk_idConsumo foreign key (idConsumo) references consumo(idConsumo)
 );
+
+
 
 -- Hacemos la inserciones de datos
 

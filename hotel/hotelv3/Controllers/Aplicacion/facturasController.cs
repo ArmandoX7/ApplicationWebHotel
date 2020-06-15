@@ -22,6 +22,7 @@ namespace hotelv3.Controllers.Aplicacion
         }
 
         // GET: facturas/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +38,7 @@ namespace hotelv3.Controllers.Aplicacion
         }
 
         // GET: facturas/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.idConsumo = new SelectList(db.consumo, "idConsumo", "idConsumo");
@@ -66,6 +68,7 @@ namespace hotelv3.Controllers.Aplicacion
         }
 
         // GET: facturas/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -103,6 +106,7 @@ namespace hotelv3.Controllers.Aplicacion
         }
 
         // GET: facturas/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)

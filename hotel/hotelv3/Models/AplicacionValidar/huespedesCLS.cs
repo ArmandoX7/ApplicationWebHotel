@@ -14,7 +14,7 @@ namespace hotelv3.Models
 
     public class huespedesMetaData
     {
-        [ScaffoldColumn(false)]
+        
         [Display(Name = "id Usuario")]
         public int idHuesped { get; set; }
 
@@ -43,6 +43,8 @@ namespace hotelv3.Models
         public string sexo { get; set; }
 
         [Required(ErrorMessage = "{0} es requerido")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Fecha de Nacimiento")]
         public System.DateTime fecha_nac { get; set; }
 
@@ -69,6 +71,7 @@ namespace hotelv3.Models
         [Required(ErrorMessage = "{0} es requerido")]
         [Display(Name = "Correo Electronico")]
         [StringLength(30, ErrorMessage = "La longitud maxima es de 30")]
+       
         public string correo { get; set; }
 
         [Required(ErrorMessage = "{0} es requerido")]
@@ -78,6 +81,7 @@ namespace hotelv3.Models
 
         
         [Display(Name = "Numero de Visitas")]
+        [RegularExpression("(^[0-9]+$)", ErrorMessage = "Solo se permiten números")]
         public Nullable<int> numVisita { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

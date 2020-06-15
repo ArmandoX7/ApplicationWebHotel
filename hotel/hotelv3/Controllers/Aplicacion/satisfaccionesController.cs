@@ -21,6 +21,7 @@ namespace hotelv3.Controllers.Aplicacion
         }
 
         // GET: satisfacciones/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +37,7 @@ namespace hotelv3.Controllers.Aplicacion
         }
 
         // GET: satisfacciones/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -59,6 +61,7 @@ namespace hotelv3.Controllers.Aplicacion
         }
 
         // GET: satisfacciones/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -90,6 +93,7 @@ namespace hotelv3.Controllers.Aplicacion
         }
 
         // GET: satisfacciones/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
