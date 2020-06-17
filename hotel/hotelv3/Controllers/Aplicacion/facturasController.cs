@@ -12,7 +12,7 @@ namespace hotelv3.Controllers.Aplicacion
 {
     public class facturasController : Controller
     {
-        private hotel5Entities db = new hotel5Entities();
+        private hotel5Entities4 db = new hotel5Entities4();
 
         // GET: facturas
         public ActionResult Index()
@@ -42,8 +42,8 @@ namespace hotelv3.Controllers.Aplicacion
         public ActionResult Create()
         {
             ViewBag.idConsumo = new SelectList(db.consumo, "idConsumo", "idConsumo");
-            ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "nombres");
-            ViewBag.idRegistro = new SelectList(db.registro, "idRegistro", "idHabitacion");
+            ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "idHuesped");
+            ViewBag.idRegistro = new SelectList(db.registro, "idRegistro", "idRegistro");
             return View();
         }
 
@@ -82,6 +82,17 @@ namespace hotelv3.Controllers.Aplicacion
             }
             ViewBag.idConsumo = new SelectList(db.consumo, "idConsumo", "idConsumo", factura.idConsumo);
             ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "nombres", factura.idHuesped);
+            ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "apellido_pat", factura.idHuesped);
+            ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "apellido_mat", factura.idHuesped);
+            ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "edad", factura.idHuesped);
+            ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "sexo", factura.idHuesped);
+            ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "fecha_nac", factura.idHuesped);
+            ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "lugar_nac", factura.idHuesped);
+            ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "direccion", factura.idHuesped);
+            ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "tel_casa", factura.idHuesped);
+            ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "tel_celular", factura.idHuesped);
+            ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "correo", factura.idHuesped);
+            ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "rfc", factura.idHuesped);
             ViewBag.idRegistro = new SelectList(db.registro, "idRegistro", "idHabitacion", factura.idRegistro);
             return View(factura);
         }

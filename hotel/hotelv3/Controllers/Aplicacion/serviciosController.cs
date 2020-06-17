@@ -12,7 +12,7 @@ namespace hotelv3.Controllers.Aplicacion
 {
     public class serviciosController : Controller
     {
-        private hotel5Entities db = new hotel5Entities();
+        private hotel5Entities4 db = new hotel5Entities4();
 
         // GET: servicios
         public ActionResult Index()

@@ -13,6 +13,7 @@ namespace hotelv3.Models
 
     public class habitacionesMetaData
     {
+        [ScaffoldColumn(false)]
         [Display(Name = "id Habitacion")]
         public int idHabitacion { get; set; }
 
@@ -22,8 +23,7 @@ namespace hotelv3.Models
         public string tipo { get; set; }
 
         [Required(ErrorMessage = "{0} es requerido")]
-        [Display(Name = "Capacidad")]
-        [RegularExpression("(^[0-9]+$)", ErrorMessage = "Solo se permiten números")]
+        [Display(Name = "Capacidad")] 
         [StringLength(20, ErrorMessage = "La longitud maxima es de 20")]
         public string capacidad { get; set; }
 

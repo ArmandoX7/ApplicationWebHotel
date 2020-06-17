@@ -10,43 +10,46 @@
 <p>
     @Html.ActionLink("Crear nueva", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.idQueja)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fecha)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.hora)
-        </th>
-        <th></th>
-    </tr>
+<div class="jumbotron">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idQueja)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hora)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.idQueja)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.hora)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.idQueja }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.idQueja }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.idQueja })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idQueja)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hora)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.idQueja }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.idQueja }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.idQueja })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+    </div>

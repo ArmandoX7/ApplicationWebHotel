@@ -12,7 +12,7 @@ namespace hotelv3.Controllers.Aplicacion
 {
     public class consumosController : Controller
     {
-        private hotel5Entities db = new hotel5Entities();
+        private hotel5Entities4 db = new hotel5Entities4();
 
         // GET: consumos
         public ActionResult Index()
@@ -41,8 +41,8 @@ namespace hotelv3.Controllers.Aplicacion
         [Authorize]
         public ActionResult Create()
         {
-            ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "nombres");
-            ViewBag.idServicio = new SelectList(db.servicio, "idServicio", "tipo");
+            ViewBag.idHuesped = new SelectList(db.huesped, "idHuesped", "idHuesped");
+            ViewBag.idServicio = new SelectList(db.servicio, "idServicio", "descripcion");
             return View();
         }
 

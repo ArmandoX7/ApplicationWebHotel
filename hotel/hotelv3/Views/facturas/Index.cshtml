@@ -10,74 +10,77 @@
 <p>
     @Html.ActionLink("Crear nueva", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.numFactura)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nombreEmisor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.telEmisor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fecha)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.hora)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.total)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.consumo.idConsumo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.huesped.nombres)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.registro.idHabitacion)
-        </th>
-        <th></th>
-    </tr>
+<div class="jumbotron">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.numFactura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreEmisor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telEmisor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.consumo.idConsumo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.huesped.idHuesped)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.registro.idHabitacion)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.numFactura)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombreEmisor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.telEmisor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha)
-           
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.hora)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.total)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.consumo.idConsumo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.huesped.nombres)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.registro.idHabitacion)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.numFactura }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.numFactura }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.numFactura })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numFactura)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombreEmisor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.telEmisor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha)
 
-</table>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.total)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.consumo.idConsumo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.huesped.idHuesped)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.registro.idHabitacion)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.numFactura }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.numFactura }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.numFactura })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

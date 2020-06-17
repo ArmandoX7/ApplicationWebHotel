@@ -14,7 +14,6 @@ namespace hotelv3.Models
     
     public partial class usuario
     {
-        public int idUser { get; set; }
         public string email { get; set; }
         public string password { get; set; }
     }

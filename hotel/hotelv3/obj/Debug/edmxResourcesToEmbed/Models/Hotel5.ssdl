@@ -28,7 +28,7 @@
     <Key>
       <PropertyRef Name="numFactura" />
     </Key>
-    <Property Name="numFactura" Type="int" Nullable="false" />
+    <Property Name="numFactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombreEmisor" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="telEmisor" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="fecha" Type="date" />
@@ -111,9 +111,8 @@
   </EntityType>
   <EntityType Name="usuario">
     <Key>
-      <PropertyRef Name="idUser" />
+      <PropertyRef Name="email" />
     </Key>
-    <Property Name="idUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="email" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
   </EntityType>

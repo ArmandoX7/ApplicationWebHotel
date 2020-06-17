@@ -20,7 +20,7 @@
             @Html.LabelFor(model => model.idHuesped, null, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("idHuesped", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.idHuesped, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.idHuesped, null, new { @class = "text-danger" })
             </div>
         </div>
 
@@ -28,7 +28,7 @@
             @Html.LabelFor(model => model.idServicio, null, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("idServicio", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.idServicio, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.idServicio, null, new { @class = "text-danger" })
             </div>
         </div>
 

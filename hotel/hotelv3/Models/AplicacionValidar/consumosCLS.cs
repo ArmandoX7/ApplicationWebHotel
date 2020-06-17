@@ -13,7 +13,7 @@ namespace hotelv3.Models
 
     public class consumosMetaData
     {
-        [Display(Name = "id Usuario")]
+        [Display(Name = "id Consumo")]
         public int idConsumo { get; set; }
 
         [Required(ErrorMessage = "{0} es requerido")]

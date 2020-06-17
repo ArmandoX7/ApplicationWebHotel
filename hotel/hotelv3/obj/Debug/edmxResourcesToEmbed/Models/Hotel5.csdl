@@ -31,7 +31,7 @@
     <Key>
       <PropertyRef Name="numFactura" />
     </Key>
-    <Property Name="numFactura" Type="Int32" Nullable="false" />
+    <Property Name="numFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nombreEmisor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="telEmisor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="fecha" Type="DateTime" Precision="0" />
@@ -125,9 +125,8 @@
   </EntityType>
   <EntityType Name="usuario">
     <Key>
-      <PropertyRef Name="idUser" />
+      <PropertyRef Name="email" />
     </Key>
-    <Property Name="idUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
@@ -215,7 +214,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="hotel5Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="hotel5Entities4" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="consumo" EntityType="Self.consumo" />
     <EntitySet Name="empleado" EntityType="Self.empleado" />
     <EntitySet Name="factura" EntityType="Self.factura" />

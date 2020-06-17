@@ -6,8 +6,7 @@ use hotel5;
 
 -- Creamos todas las tablas esenciales para la base de datos con sus columnas y relaciones
 create table usuario(
-idUser int identity(1,1) not null primary key,
-email varchar(30) not null,
+email varchar(30) not null primary key,
 password varchar(30) not null
 );
 
@@ -93,7 +92,7 @@ hora time not null,
 constraint fk_idHuesped2 foreign key (idHuesped) references huesped(idHuesped),
 constraint fk_idServicio foreign key (idServicio) references servicio(idServicio)
 );
-
+drop table factura;
 create table factura(
 numFactura int identity(1,1) not null primary key,
 nombreEmisor varchar(50) not null,
@@ -227,6 +226,20 @@ insert into servicio values ('externo','museos',null,null,100);
 insert into servicio values ('externo','festivales','2020-08-18','17:00:00',100);
 insert into servicio values ('externo','zonas históricas',null,null,100);
 insert into servicio values ('externo','servicios de traslados',null,null,500);
+
+
+create proc PROC_01(
+@nombreEmiso varchar(20)='dasd',
+@telEmisor as varchar(20),
+)
+as
+begin
+
+
+insert into factura values()
+end
+;
+select * from servicio;
 
 -------------------------------------------------------------------------------------
 -- Creamos los triggers que el proyecto lo requiera

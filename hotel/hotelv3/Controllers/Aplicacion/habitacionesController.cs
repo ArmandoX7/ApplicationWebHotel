@@ -8,7 +8,7 @@ namespace hotelv3.Controllers.Aplicacion
 {
     public class habitacionesController : Controller
     {
-        private hotel5Entities db = new hotel5Entities();
+        private hotel5Entities4 db = new hotel5Entities4();
 
         // GET: habitaciones
         public ActionResult Index()

@@ -9,11 +9,14 @@ namespace hotelv3.Models
     [MetadataType(typeof(serviciosMetaData))]
     public partial class servicio
     {
+        
+
     }
 
     public class serviciosMetaData
     {
-        [ScaffoldColumn(false)]
+
+        [ScaffoldColumn(true)]
         [Display(Name = "id Servicio")]
         public int idServicio { get; set; }
 
@@ -43,5 +46,6 @@ namespace hotelv3.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<consumo> consumo { get; set; }
+
     }
 }

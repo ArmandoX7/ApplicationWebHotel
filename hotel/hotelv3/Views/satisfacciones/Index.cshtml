@@ -10,49 +10,52 @@
 <p>
     @Html.ActionLink("Crear nueva", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.idSatisfaccion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.calificacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fecha)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.hora)
-        </th>
-        <th></th>
-    </tr>
+<div class="jumbotron">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idSatisfaccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.calificacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hora)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.idSatisfaccion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.calificacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.hora)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.idSatisfaccion }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.idSatisfaccion }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.idSatisfaccion })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idSatisfaccion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.calificacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hora)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.idSatisfaccion }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.idSatisfaccion }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.idSatisfaccion })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+    </div>

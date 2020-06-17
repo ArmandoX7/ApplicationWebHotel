@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7a9ba9d28296459b92c912f33d7259bf" Name="Diagram1">
+      <Diagram DiagramId="251c21b008264d60a12c27a1b1222a19" Name="Diagram1">
         <EntityTypeShape EntityType="hotel5Model.consumo" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="hotel5Model.empleado" Width="1.5" PointX="2.75" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="hotel5Model.factura" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
@@ -14,7 +14,7 @@
         <EntityTypeShape EntityType="hotel5Model.registro" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="hotel5Model.satisfaccion" Width="1.5" PointX="6.75" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="hotel5Model.servicio" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="hotel5Model.usuario" Width="1.5" PointX="8.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="hotel5Model.usuario" Width="1.5" PointX="5.75" PointY="1.875" IsExpanded="true" />
         <AssociationConnector Association="hotel5Model.fk_idConsumo" ManuallyRouted="false" />
         <AssociationConnector Association="hotel5Model.fk_idHuesped2" ManuallyRouted="false" />
         <AssociationConnector Association="hotel5Model.fk_idServicio" ManuallyRouted="false" />
